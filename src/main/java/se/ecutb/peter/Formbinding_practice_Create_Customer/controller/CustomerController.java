@@ -38,7 +38,6 @@ public class CustomerController {
         return model;
     }
 
-
     @PostMapping("customer/process")
     public String processForm(@Valid @ModelAttribute("form") CustomerFormDto customerDto, BindingResult bindingResult){
 
@@ -71,8 +70,6 @@ public class CustomerController {
 //    @GetMapping("/customer/email")
 //    public String findByEmail(Model model, String email){
 //        model.addAttribute("customers", customerDao.findByEmail(email));
-//
-//
 //        return "customerView";
 //    }
 
