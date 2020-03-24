@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.css}">
+    <meta charset="UTF-8">
+    <title>Search Customer</title>
+</head>
+<body>
+
+        <h2>Search Customer by Email</h2>
+
+            <form th:fragment="search-email" th:action="@{/customer/process}" method="get">
+                <input type="hidden" id="type" name="type" value="email"/>
+                <div class="form-group">
+                    <label>Search by email</label>
+                    <input type="text" class="form-control" id="value" name="value" placeholder="Search by email"/>
+                </div>
+                <button type="submit">Search</button>
+            </form>
+
+        <!-- Button to Reset form-->
+        <br>
+        <button class="btn btn-dark" type="text"id="customerFormResetBtn"><a th:href="@{/customer/create}"/> Create new Customer</button>
+        <br><br>
+
+    </body>
+</html>

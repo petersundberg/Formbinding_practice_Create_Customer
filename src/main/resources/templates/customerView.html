@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.css}">
+    <meta charset="UTF-8">
+    <title>Customer</title>
+</head>
+    <body>
+        <div class="container">
+
+            <form th:replace="customerSearch :: search-email"></form>
+            <div th:if="${message}">
+                <p th:text="${message}">
+                </p>
+            </div>
+
+            <div th:if="${customer}">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Customer Id</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Registration date</th>
+                        <th scope="col">Active</th>
+                        <th scope="col">Details</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><span th:text="${customer.customerId}"></span></td>
+                        <td><span th:text="${customer.email}"></span></td>
+                        <td><span th:text="${customer.regDate}"></span></td>
+                        <td><span th:text="${customer.active}"></span></td>
+                        <td><span th:text="${customer.details}"></span></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+
+        </div>
+
+    </body>
+</html>
+

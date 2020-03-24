@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.css}">
+    <meta charset="UTF-8">
+    <title>Customer</title>
+</head>
+    <body>
+        <div class="container">
+            <br>
+            <h3>Customer form</h3>
+            <!-- Eftersom customerId inte finns med här kommer den nu att vara null. Om du skulle binda den i formen skulle den vara "" alltså tom ??
+                 Om man inte fyller i ett fält kommer en tom string skickas in i din dto. ok. Därför skulle du kunna ta bort idn i ditt form objekt hmm?-->
+
+            <!--Email:-->
+            <form th:action="@{/customer/process}" method="post" th:object="${form}">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input class="form-control" type="email" id="email" th:field="*{email}" />
+                </div>
+                <div th:if="${#fields.hasErrors('email')}">
+                    <ul style="list-style-type:circle; color: red">         <!-- formatting the bullets of the list -->
+                        <li th:each="err : ${#fields.errors('email')}">
+                            <span th:text="${err}" style = "color: red"></span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!--Regdate:-->
+                <div class="form-group">
+                    <label for="regDate">Registration date:</label>
+                    <input class="form-control" type="text" id="regDate" th:field="*{regDate}" readonly="readonly"/>
+                </div>
+                <div th:if="${#fields.hasErrors('regDate')}">
+                    <ul style="list-style-type:circle; color: red">         <!-- formatting the bullets of the list -->>
+                        <li th:each="err : ${#fields.errors('regDate')}">
+                            <span th:text="${err}" style = "color: red"></span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!--Active:-->
+                <div class="form-group">
+                    <label for="activeOptions">Active:</label>
+                    <select class="form-control" type="text" name="activeOptions" id="activeOptions" th:field="*{active}">
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+
+                <div th:if="${#fields.hasErrors('active')}">
+                    <ul style="list-style-type:circle; color: red">         <!-- formatting the bullets of the list -->>
+                        <li th:each="err : ${#fields.errors('active')}">
+                            <span th:text="${err}" style = "color: red"></span>
+                        </li>
+                    </ul>
+                </div>
+
+<!--//////////////////////////////////////////////-->
+<!-- Original code to Print Active: "Yes" -->
+<!--                <div class="form-group">-->
+<!--                    <label for="active">Active:</label>-->
+<!--                    <input class="form-control" type="text" id="active" th:field="*{active}"/>-->
+<!--                </div>-->
+<!--                <div th:if="${#fields.hasErrors('active')}">-->
+<!--                    <ul>-->
+<!--                        <li th:each="err : ${#fields.errors('active')}">-->
+<!--                            <span th:text="${err}"></span>-->
+<!--                        </li>-->
+<!--                    </ul>-->
+<!--                </div>                -->
+<!--//////////////////////////////////////////////-->
+
+                <!--Details: -->
+                <!--Street -->
+                <div class="form-group">
+                    <label for="street">Street:</label>
+                    <input class="form-control" type="text" id="street" th:field="*{street}"/>
+                </div>
+                <div th:if="${#fields.hasErrors('street')}">
+                    <ul style="list-style-type:circle; color: red">         <!-- formatting the bullets of the list -->>
+                        <li th:each="err : ${#fields.errors('street')}">
+                            <span th:text="${err}" style = "color: red"></span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!--Zipcode -->
+                <div class="form-group">
+                    <label for="zipCode">Zipcode:</label>
+                    <input class="form-control" type="text" id="zipcode" th:field="*{zipCode}" />
+                </div>
+                <div th:if="${#fields.hasErrors('zipCode')}">
+                    <ul style="list-style-type:circle; color: red">         <!-- formatting the bullets of the list -->>
+                        <li th:each="err : ${#fields.errors('zipCode')}">
+                            <span th:text="${err}" style = "color: red"></span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!--City -->
+                <div class="form-group">
+                    <label for="city">City:</label>
+                    <input class="form-control" type="text" id="city" th:field="*{city}" />
+                </div>
+                <div th:if="${#fields.hasErrors('city')}">
+                    <ul style="list-style-type:circle; color: red">         <!-- formatting the bullets of the list -->>
+                        <li th:each="err : ${#fields.errors('city')}">
+                            <span th:text="${err}" style = "color: red"></span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!--Homephone -->
+                <div class="form-group">
+                    <label for="homePhone">Homephone:</label>
+                    <input class="form-control" type="text" id="homePhone" th:field="*{homePhone}" />
+                </div>
+                <div th:if="${#fields.hasErrors('homePhone')}">
+                    <ul style="list-style-type:circle; color: red">         <!-- formatting the bullets of the list -->>
+                        <li th:each="err : ${#fields.errors('homePhone')}">
+                            <span th:text="${err}" style = "color: red"></span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!--Cellphone -->
+                <div class="form-group">
+                    <label for="cellPhone">Cellphone:</label>
+                    <input class="form-control" type="text" id="cellPhone" th:field="*{cellPhone}" />
+                </div>
+                <div th:if="${#fields.hasErrors('cellPhone')}">
+                    <ul style="list-style-type:circle; color: red">         <!-- formatting the bullets of the list -->>
+                        <li th:each="err : ${#fields.errors('cellPhone')}">
+                            <span th:text="${err}" style = "color: red"></span>
+                        </li>
+                    </ul>
+                </div>
+
+            <button class="btn btn-primary" type="submit">Submit</button>
+            </form>
+            <br>
+
+
+
+            <!-- Button to Search Customer -->
+            <br>
+            <button class="btn btn-dark" type="text"id="customerSearchBtn"><a th:href="@{/customer/search}"/> Search Customer ...</button>
+            <br><br>
+
+            <!-- Button to Reset form-->
+            <br>
+            <button class="btn btn-dark" type="text"id="customerFormResetBtn"><a th:href="@{/customer/create}"/> Reset ...</button>
+            <br><br>
+
+        </div>
+
+
+    </body>
+</html>
