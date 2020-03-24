@@ -11,18 +11,12 @@
     <body>
         <div class="container">
 
-            <!-- Button to Customer Search -->
-            <br>
-            <button class="btn btn-dark" type="text"id="customerSearchBtn"><a th:href="@{/customer/search}"/> Search Customer ...</button>
-            <br><br>
-
-            
-
             <form th:replace="customerSearch :: search-email"></form>
             <div th:if="${message}">
                 <p th:text="${message}">
                 </p>
             </div>
+
 
             <div th:if="${customer}">
                 <table class="table">
