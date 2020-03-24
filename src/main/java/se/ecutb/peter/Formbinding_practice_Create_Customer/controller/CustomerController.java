@@ -46,15 +46,9 @@ public class CustomerController {
             FieldError emailError = new FieldError("form", "email", customerDto.getEmail() + " is already in use.");
             bindingResult.addError(emailError);
         }
-
         if(bindingResult.hasErrors()){
             return "customer";
         }
-
-
-//        Customer newCustomer =new Customer(customerDto.getEmail(), LocalDate.now(), customerDto.isActive(), customerDto.getDetails());
-//        newCustomer = customerDao.save(newCustomer);
-
         Customer newCustomer =new Customer(customerDto.getEmail(), customerDto.getRegDate(), customerDto.isActive(), new CustomerDetails(
             customerDto.getEmail(),
             customerDto.getStreet(),
@@ -71,13 +65,7 @@ public class CustomerController {
     @GetMapping("customer/search")
     public String getSearch(){
 
-        return "customerSearch";    //Aha :) :(   :) som jag sagt tidigare, jag har SÅ svårt för att se gången i det hela, att fälja vad som händer och HUR.
-        // Man måste ju för visa formuläret innan man kan använda det. Givetvis, när du säger det :). Tips: I projektet jobba inte själv
-        //funderade på det också ska höra om någon vill jobba med mig, vet inte vem än ... Jag ser dig som en av de bästa eleverna (PÅ RIKTIGT!)
-        //Nä, Eerik. Nu får du skärpa dig! :o) men TACK SOM F A N!  TÖdmyYUVärr känner jag  mig INTE sån. Ödmjukhet är bra. Men sedan avancerad javaprogrammering har du varit MYCKET bra
-        //Tack! Ska FÖRSÖKA tänka så ... Jag har ett "talesätt" som jag kommit på och som jag kör med : " Ödmjukhet är min enda last"! ;o) Jag gillar att du frågar mycket
-        //å jag som bara känner mig okunnig och jobbig när jag frågar dig hela tiden" Robin delar min uppfattning om dig
-        //Oj, väldigt ul att höra! Åter till mina frågor ...?ok
+        return "customerSearch";
     }
 
 //    @GetMapping("/customer/email")
@@ -89,10 +77,10 @@ public class CustomerController {
 //    }
 
 
-//    @GetMapping("customer/view")
-//    public String showSearch(){
-//        return "customerView";
-//    }
+    @GetMapping("customer/view")
+    public String showSearch(){
+        return "customerView";
+    }
 
     @GetMapping("/customer")
     public String find(@RequestParam("type") String type, @RequestParam("value") String value, Model model){
@@ -124,13 +112,24 @@ public class CustomerController {
 
 
 
+//            return "customerSearch";    //Aha :) :(   :) som jag sagt tidigare, jag har SÅ svårt för att se gången i det hela, att fälja vad som händer och HUR.
+//    // Man måste ju för visa formuläret innan man kan använda det. Givetvis, när du säger det :). Tips: I projektet jobba inte själv
+//    //funderade på det också ska höra om någon vill jobba med mig, vet inte vem än ... Jag ser dig som en av de bästa eleverna (PÅ RIKTIGT!)
+//    //Nä, Eerik. Nu får du skärpa dig! :o) men TACK SOM F A N!  TÖdmyYUVärr känner jag  mig INTE sån. Ödmjukhet är bra. Men sedan avancerad javaprogrammering har du varit MYCKET bra
+//    //Tack! Ska FÖRSÖKA tänka så ... Jag har ett "talesätt" som jag kommit på och som jag kör med : " Ödmjukhet är min enda last"! ;o) Jag gillar att du frågar mycket
+//    //å jag som bara känner mig okunnig och jobbig när jag frågar dig hela tiden" Robin delar min uppfattning om dig
+//    //Oj, väldigt ul att höra! Åter till mina frågor ...?ok
+//}
+
+
+//        Customer newCustomer =new Customer(customerDto.getEmail(), LocalDate.now(), customerDto.isActive(), customerDto.getDetails());
+//        newCustomer = customerDao.save(newCustomer);
+
 //    @GetMapping("/customer")
 //    public String findAll(Model model){
 //        model.addAttribute("customers", customerDao.findAll());
 //        return "customer-view"; //return "customer-list";
 //    }
-
-
 
 
 //    @GetMapping("users")

@@ -10,9 +10,10 @@
 </head>
 <body>
 
-        <h2>Search Customer by Email</h2>
+        <h3>Search Customer by Email</h3>
+        <br>
 
-            <form th:fragment="search-email" th:action="@{/customer/process}" method="get">
+            <form th:fragment="search-email" th:action="@{/customer}" method="get">
                 <input type="hidden" id="type" name="type" value="email"/>
                 <div class="form-group">
                     <label>Search by email</label>

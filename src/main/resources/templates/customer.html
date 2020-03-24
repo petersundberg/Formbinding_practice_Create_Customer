@@ -15,8 +15,10 @@
             <!-- Eftersom customerId inte finns med här kommer den nu att vara null. Om du skulle binda den i formen skulle den vara "" alltså tom ??
                  Om man inte fyller i ett fält kommer en tom string skickas in i din dto. ok. Därför skulle du kunna ta bort idn i ditt form objekt hmm?-->
 
-            <!--Email:-->
+
             <form th:action="@{/customer/process}" method="post" th:object="${form}">
+
+                <!--Email:-->
                 <div class="form-group">
                     <label for="email">Email:</label>
                     <input class="form-control" type="email" id="email" th:field="*{email}" />
@@ -155,6 +157,11 @@
             <br>
             <button class="btn btn-dark" type="text"id="customerFormResetBtn"><a th:href="@{/customer/create}"/> Reset ...</button>
             <br><br>
+
+<!--            &lt;!&ndash; Button to Customer View &ndash;&gt;-->
+<!--            <br>-->
+<!--            <button class="btn btn-dark" type="text"id="customerViewBtn"><a th:href="@{/customer/view}"/> Customer View ...</button>-->
+<!--            <br><br>-->
 
         </div>
 
