@@ -61,20 +61,6 @@
                     </ul>
                 </div>
 
-<!--//////////////////////////////////////////////-->
-<!-- Original code to Print Active: "Yes" -->
-<!--                <div class="form-group">-->
-<!--                    <label for="active">Active:</label>-->
-<!--                    <input class="form-control" type="text" id="active" th:field="*{active}"/>-->
-<!--                </div>-->
-<!--                <div th:if="${#fields.hasErrors('active')}">-->
-<!--                    <ul>-->
-<!--                        <li th:each="err : ${#fields.errors('active')}">-->
-<!--                            <span th:text="${err}"></span>-->
-<!--                        </li>-->
-<!--                    </ul>-->
-<!--                </div>                -->
-<!--//////////////////////////////////////////////-->
 
                 <!--Details: -->
                 <!--Street -->
@@ -147,10 +133,9 @@
             <br>
 
 
-
-            <!-- Button to Search Customer -->
+            <!-- Button to Customer View -->
             <br>
-            <button class="btn btn-dark" type="text"id="customerSearchBtn"><a th:href="@{/customer/search}"/> Search Customer ...</button>
+            <button class="btn btn-dark" type="text"id="customerSearchBtn"><a th:href="@{/customer/view}"/> Search Customer ...</button>
             <br><br>
 
             <!-- Button to Reset form-->
@@ -164,3 +149,22 @@
 
     </body>
 </html>
+
+
+
+<!--//////////////////////////////////////////////-->
+<!-- Original code to Print Active: "Yes" -->
+<!--                <div class="form-group">-->
+<!--                    <label for="active">Active:</label>-->
+<!--                    <input class="form-control" type="text" id="active" th:field="*{active}"/>-->
+<!--                </div>-->
+<!--                <div th:if="${#fields.hasErrors('active')}">-->
+<!--                    <ul>-->
+<!--                        <li th:each="err : ${#fields.errors('active')}">-->
+<!--                            <span th:text="${err}"></span>-->
+<!--                        </li>-->
+<!--                    </ul>-->
+<!--                </div>                -->
+<!--//////////////////////////////////////////////-->
+
+

@@ -75,7 +75,7 @@ public class CustomerController {
 
 
     @GetMapping("customer/view")
-    public String showSearch(){
+    public String showView(){
         return "customerView";
     }
 
