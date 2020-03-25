@@ -11,18 +11,6 @@ public class CustomerFormDto {
     public static final String EMAIL_REGEX = "^(\\D)+(\\w)*((\\.(\\w)+)?)+@(\\D)+(\\w)*((\\.(\\D)+(\\w)*)+)?(\\.)[a-z]{2,}$";
     public static final String EMAIL_MESSAGE = "Specified email address is invalid.";
 
-//    public static final String NULL_REGDATE_MESSAGE = "Registration date is required.";
-//    public static final String ZIPCODE_REGEX = "\\d{3}[ ]?\\d{2}";
-//    public static final String HOMEPHONE_REGEX = "\\d{2,4}[-]?\\d{5,7}";
-//    public static final String CELLPHONE_REGEX = "\\d{3,4}[-]?\\d{5,7}";
-
-
-//    @NotBlank(message = "A unique Id is required.")
-//    @NotNull(message = "Id cannot be null.")
-//    private String customerId;
-
-    //@NotBlank(message = "Email is required to register.")
-    //@Email(regexp = EMAIL_REGEX, flags = Pattern.Flag.CASE_INSENSITIVE, message = EMAIL_MESSAGE)
 
     @NotBlank(message = "Email is required.")
     @Email(regexp = EMAIL_REGEX, flags = Pattern.Flag.CASE_INSENSITIVE, message = EMAIL_MESSAGE)
@@ -40,10 +28,9 @@ public class CustomerFormDto {
  //------------------------------------
  //CustomerDetails
 
-    //@NotBlank(message = "A unique detail Id is required.")
-    //@NotNull(message = "Detail Id cannot be null.")
-    //@Null
-    //private String detailsId; //denna bhöver du inte för att skapa dton du VILL att den ska vara null Ok!
+    //denna behöver du inte för att skapa dton du VILL att den ska vara null Ok!
+    //private String detailsId;
+
 
     private String street;
     private String zipCode;
@@ -133,4 +120,5 @@ public class CustomerFormDto {
     public void setCellPhone(String cellPhone) {
         this.cellPhone = cellPhone;
     }
+
 }

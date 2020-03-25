@@ -13,7 +13,7 @@ public class CustomerDetails {
 
     public CustomerDetails(String street, String zipCode, String city, String homePhone, String cellPhone) {
         detailsId = UUID.randomUUID().toString();
-        setStreet(street);  //Fixat anropa resten av setters i construktorn för att säkerställa. På samma sätt som street ....?ja ok, ska försöka :)
+        setStreet(street);  //Fixat anropa resten av setters i construktorn för att säkerställa.
         setZipCode(zipCode);
         setCity(city);
         setHomePhone(homePhone);
@@ -33,8 +33,7 @@ public class CustomerDetails {
     }
 
 
-    //Denna gör precis rätt. Ok, men då kommer kommande fråga ang. validering i deta fall ... Detta är ingen form får den in null eller "" får den ett default värde
-        public void setStreet(String street){
+        public void setStreet(String street){       //Denna gör precis rätt. Detta är ingen form får den in null eller "" får den ett default värde
         if(street == null || street.isEmpty()){
             this.street = "No street defined";
         }
@@ -72,7 +71,6 @@ public class CustomerDetails {
             this.city = city;
         }
     }
-
 
 
     public String getHomePhone() {

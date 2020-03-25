@@ -67,11 +67,6 @@ public class CustomerController {
         return "customerSearch";
     }
 
-//    @GetMapping("/customer/email")
-//    public String findByEmail(Model model, String email){
-//        model.addAttribute("customers", customerDao.findByEmail(email));
-//        return "customerView";
-//    }
 
 
     @GetMapping("customer/view")
@@ -108,109 +103,8 @@ public class CustomerController {
     }
 
 
-
-//            return "customerSearch";    //Aha :) :(   :) som jag sagt tidigare, jag har SÅ svårt för att se gången i det hela, att fälja vad som händer och HUR.
-//    // Man måste ju för visa formuläret innan man kan använda det. Givetvis, när du säger det :). Tips: I projektet jobba inte själv
-//    //funderade på det också ska höra om någon vill jobba med mig, vet inte vem än ... Jag ser dig som en av de bästa eleverna (PÅ RIKTIGT!)
-//    //Nä, Eerik. Nu får du skärpa dig! :o) men TACK SOM F A N!  TÖdmyYUVärr känner jag  mig INTE sån. Ödmjukhet är bra. Men sedan avancerad javaprogrammering har du varit MYCKET bra
-//    //Tack! Ska FÖRSÖKA tänka så ... Jag har ett "talesätt" som jag kommit på och som jag kör med : " Ödmjukhet är min enda last"! ;o) Jag gillar att du frågar mycket
-//    //å jag som bara känner mig okunnig och jobbig när jag frågar dig hela tiden" Robin delar min uppfattning om dig
-//    //Oj, väldigt ul att höra! Åter till mina frågor ...?ok
-//}
-
-
-//        Customer newCustomer =new Customer(customerDto.getEmail(), LocalDate.now(), customerDto.isActive(), customerDto.getDetails());
-//        newCustomer = customerDao.save(newCustomer);
-
-//    @GetMapping("/customer")
-//    public String findAll(Model model){
-//        model.addAttribute("customers", customerDao.findAll());
-//        return "customer-view"; //return "customer-list";
-//    }
-
-
-//    @GetMapping("users")
-//    public String find(@RequestParam("type") String type, @RequestParam("value") String value, Model model){
-//        Optional<AppUser> optionalAppUser = Optional.empty();
-//
-//        switch (type){
-//            case "id":
-//                optionalAppUser = appUserDao.findById(value);
-//                break;
-//            case "email":
-//                optionalAppUser = appUserDao.findAll().stream()
-//                        .filter(user -> user.getEmail().equalsIgnoreCase(value))
-//                        .findFirst();
-//                break;
-//            default:
-//                throw new IllegalArgumentException("Type " + type + "is unknown");
-//        }
-//
-//        if(optionalAppUser.isPresent()){
-//            model.addAttribute("user", optionalAppUser.get());
-//        }else {
-//            model.addAttribute("message", "User could not be found");
-//        }
-//
-//
-//        return "user-view";
-//    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-//    @PostMapping("users/process")
-//    public String processForm(@Valid @ModelAttribute("form") AppUserFormDto formDto, BindingResult bindingResult){
-//
-//        if(appUserDao.findByEmail(formDto.getEmail()).isPresent()){
-//            FieldError emailError = new FieldError("form","email","Email " + formDto.getEmail() +" is already defined");
-//            bindingResult.addError(emailError);
-//        }
-//
-//        if(!formDto.getPassword().equals(formDto.getPasswordConfirm())){
-//            FieldError confirmError = new FieldError("form", "passwordConfirm", "Your password confirmation didn't match the password");
-//            bindingResult.addError(confirmError);
-//        }
-//
-//        if(bindingResult.hasErrors()){
-//            return "create-user";
-//        }
-//
-//        AppUser newAppUser = new AppUser(formDto.getEmail(), formDto.getFirstName(), formDto.getLastName(), formDto.getPassword());
-//        newAppUser = appUserDao.save(newAppUser);
-//
-//        return "redirect:/users?type=id&value="+newAppUser.getUserId();
-//    }
-
-
-
-
-//    @GetMapping("users/create")
-//    public ModelAndView getForm(){
-//        AppUserFormDto formDto = new AppUserFormDto();
-//        ModelAndView model = new ModelAndView();
-//        model.addObject("form", formDto);
-//        model.setViewName("create-user");
-//        //model.addAttribute("form", formDto);
-//        return model;
-//    }
-
-
-
-
-
-
-
 }
+
 
 
 
